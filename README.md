@@ -3,35 +3,35 @@
 In this project, we create a Blog using Flask, Flask-Login, and SQLAlchemy. Flask is a micro python web framework based on Werkzeug and Jinja 2. Basically, there are two types of web frameworks, Flask and Django. Flask is light weight, fun and easy to setup allowing flexiblity compared to Django. 
 
 <p>
-  <img src="static/images/home.png" alt="" />
+  <img src="website/static/images/home.png" alt="" />
 </p>
 
 <p>
-  <img src="static/images/about.png" alt="" />
+  <img src="website/static/images/about.png" alt="" />
 </p>
 
 <p>
-  <img src="static/images/services.png" alt="" />
+  <img src="website/static/images/services.png" alt="" />
 </p>
 
 <p>
-  <img src="static/images/register.png" alt="" />
+  <img src="website/static/images/register.png" alt="" />
 </p>
 
 <p>
-  <img src="static/images/login.png" alt="" />
+  <img src="website/static/images/login.png" alt="" />
 </p>
 
 <p>
-  <img src="static/images/posts.png" alt="" />
+  <img src="website/static/images/posts.png" alt="" />
 </p>
 
 <p>
-  <img src="static/images/create_post.png" alt="" />
+  <img src="website/static/images/create_post.png" alt="" />
 </p>
 
 <p>
-  <img src="static/images/my_notes.png" alt="" />
+  <img src="website/static/images/my_notes.png" alt="" />
 </p>
 
 <p>
