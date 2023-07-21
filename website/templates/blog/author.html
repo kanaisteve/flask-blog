@@ -1,0 +1,11 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<h1 class="fw-bold pt-3">Blog: <small>{{ post.title }}</small></h1>
+<div class="card-header d-flex justify-content-between align-items-center border-bottom pb-2">
+    <a href="posts/{{ post.author.username }}">
+        {{ post.author.username }}
+    </a>
+</div>
+<div class="pt-3">{{ post.content }}</div>
+{% endblock %}

@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block title %}Create Post{% endblock %}
+
+{% block content %}
+<div align="center">
+    <form action="/create-post" method="POST" class="col-6 mt-4">
+        <!-- Page Title -->
+        <h2 align="center" class="my-3">Create Post</h2>
+
+        <!-- Blog Title -->
+        <div class="mb-3">
+            <!-- <label for="username" class="form-label float-start">Title</label> -->
+            <input 
+                type="text" 
+                name="title" 
+                value="{{ request.form.title }}" 
+                class="form-control shadow-none"
+                placeholder="Title" />
+        </div>
+
+        <!-- Make a Post -->
+        <div class="mb-3">
+            <label for="username" class="form-label float-start"></label>
+            <textarea class="form-control shadow-none" name="content" id="" cols="30" rows="10" placeholder="Content"></textarea>
+        </div>
+
+        <!-- Submit -->
+        <button type="submit" class="btn btn-secondary shadow-none">Submit</button>
+    </form>
+</div>
+{% endblock %}

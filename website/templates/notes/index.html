@@ -1,0 +1,48 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+    <h2 class="fw-bold mt-4 mb-3">My Notes</h2>
+
+    <div class="posts">
+        {% for note in notes %}
+            <div class="card mb-3">
+                <div class="card-header d-flex justify-content-between align-items-center">
+                    <!-- Note title -->
+                    <a href="notes/{{ note.id }}" class="text-decoration-none text-secondary">
+                        Note #{{ note.id }}
+                    </a>
+
+                    <div>
+                        {% if current_user.id == note.user_id %}
+                        <!-- dropdown menu: only author of note or admin can delete this note -->
+                        <div class="btn-group">
+                            <button
+                                type="button" 
+                                class="btn btn-md btn-secondary dropdown-toggle" 
+                                data-bs-toggle="dropdown"
+                            ></button>
+                            <ul class="dropdown-menu">
+                                <li><a href="/delete-note/{{ note.id }}" class="dropdown-item">Delete</a></li>
+                            </ul>
+                        </div>
+                        {% endif %}
+                    </div>
+                </div>
+                <div class="card-body">
+                    <!-- note content -->
+                    <div class="card-text mb-3">{{ note.content }}</div>
+                </div>
+                <!-- <div class="card-footer text-muted">{{ note.date_created }}</div> -->
+            </div>
+        {% endfor %}
+
+        <!-- Add Note -->
+        <form action="/notes" method="POST">
+            <textarea name="note" id="" cols="30" rows="5" class="form-control shadow-none"></textarea>
+            <div align="center" class="mt-3">
+                <button type="submit" class="btn btn-secondary">Add Note</button>
+            </div>
+        </form>
+    </div>
+    
+{% endblock %}
