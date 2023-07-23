@@ -1,0 +1,31 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+    <!-- Form Fields -->
+    {% if email %}
+        <h1 class="mt-4">Email, {{ email }}</h1>
+        <h1 class="mb-3">Password, {{ password }}</h1>
+        <h2>I found this info</h2>
+        <p>Name: {{ user.name }}</p>
+        <p>Email: {{ user.email }}</p>
+        <p>PW: {{ user.password_hash }}</p>
+        <p>Passed: {{ passed }}</p>
+    {% else %}
+        <!-- Heading -->
+        <h1 class="mt-4">What's Your Name?</h1>
+        <!-- Login Form -->
+        <form action="" method="POST">
+            {{ form.hidden_tag() }}
+
+            {{ form.email.label(class="form-label") }}
+            {{ form.email(class="form-control shadow-none") }}
+            <br />
+
+            {{ form.password.label(class="form-label") }}
+            {{ form.password(class="form-control shadow-none") }}
+            <br />
+
+            {{ form.submit(class="btn btn-secondary shadow-none") }}
+        </form>
+    {% endif %}
+{% endblock %}

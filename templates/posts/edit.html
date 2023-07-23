@@ -1,0 +1,35 @@
+{% extends 'layout.html' %}
+
+{% block title %}Edit Blog Post{% endblock %}
+
+{% block content %}
+<!-- <h2 class="mt-4">Blog Post</h2> -->
+
+<div class="shadow p-3 mb-3 bg-body rounded">
+    <form action="" method="POST">
+        {{ form.hidden_tag() }}
+
+        {{ form.title.label(class="form-label") }}
+        {{ form.title(class="form-control shadow-none") }}
+        <br />
+
+        {{ form.slug.label(class="form-label") }}
+        {{ form.slug(class="form-control shadow-none") }}
+        <br />
+
+        {{ form.content.label(class="form-label") }}
+        {{ form.content(class="form-control shadow-none") }}
+        <br />
+
+        {{ form.submit(class="btn btn-secondary shadow-none") }}
+    </form>
+
+    {{ ckeditor.load() }}
+    {{ ckeditor.config(name='content') }}
+</div>
+
+<!-- back btn -->
+<a href="{{ url_for('posts') }}" class="btn btn-outline-secondary btn-sm">
+    Back To Blog
+</a>
+{% endblock %}

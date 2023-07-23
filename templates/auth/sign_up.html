@@ -1,0 +1,59 @@
+{% extends "layout.html" %}
+
+{% block title %}Sign Up{% endblock %}
+
+{% block content %}
+<div align="center">
+    <form action="/sign-up" method="POST" class="col-6">
+        <!-- Title -->
+        <h2 align="center" class="my-3">Sign Up</h2>
+
+        <!-- Email Address -->
+        <div class="mb-3">
+            <label for="username" class="form-label float-start">Email</label>
+            <input 
+                type="email" 
+                name="email" 
+                value="{{ request.form.email }}" 
+                class="form-control shadow-none"
+                placeholder="Enter email" />
+        </div>
+
+        <!-- Username -->
+        <div class="mb-3">
+            <label for="username" class="form-label float-start">Username</label>
+            <input 
+                type="text" 
+                name="username" 
+                value="{{ request.form.username }}" 
+                class="form-control shadow-none"
+                placeholder="Enter username" />
+        </div>
+
+        <!-- Password -->
+        <div class="mb-3">
+            <label for="password1" class="form-label float-start">Password</label>
+            <input 
+                type="password" 
+                name="password1" 
+                value="{{ request.form.password1 }}" 
+                class="form-control shadow-none"
+                placeholder="Enter password" />
+        </div>
+
+        <!-- Confirm Password -->
+        <div class="mb-3">
+            <label for="password2" class="form-label float-start">Password</label>
+            <input 
+                type="password" 
+                name="password2" 
+                value="{{ request.form.password2 }}" 
+                class="form-control shadow-none"
+                placeholder="Confirm password" />
+        </div>
+
+        <!-- Submit -->
+        <button type="submit" class="btn btn-primary shadow-none">Submit</button>
+    </form>
+</div>
+{% endblock %}

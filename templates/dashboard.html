@@ -1,0 +1,130 @@
+{% extends 'layout.html' %}
+
+{% block title %}Dashboard{% endblock %}
+
+{% block content %}
+    <h1 class="my-4">Dashboard</h1>
+    <p class="mb-3">You Are Logged In!</p>
+
+    <div class="card">
+        <div class="card-header">
+            {{ current_user.name }}
+        </div>
+        <div class="card-body">
+            <!-- <h5 class="card-title lead">Welcome to your User Dashboard</h5> -->
+                
+            <div class="container mb-3">
+                <div class="row">
+                    <!-- User Details -->
+                    <div class="col-8">
+                        <p class="card-text">
+                            <strong>Name:</strong>
+                            {{ current_user.name }} <br />
+                                
+                            <strong>Username:</strong>
+                            {{ current_user.username }} <br />
+                                
+                            <strong>User Id:</strong>
+                            {{ current_user.id }} <br />
+                            
+                            <strong>Email:</strong>
+                            {{ current_user.email }} <br />
+                                
+                            <strong>Favorite Color:</strong>
+                            {{ current_user.favorite_color }} <br />
+                                
+                            <strong>About Author:</strong>
+                            {{ current_user.about }} <br />
+                                
+                            <strong>Profile Pic:</strong>
+                            {{ current_user.avatar }} <br />
+                                
+                            <strong>Date Joined:</strong>
+                            {{ current_user.date_added }} <br />
+                        </p>
+                        <!-- Login Btn -->
+                        <a href="{{ url_for('logout') }}" 
+                            class="btn btn-secondary btn-sm">
+                            Logout
+                        </a>
+
+                        <!-- Update Profile Btn -->
+                        <a href="{{ url_for('update_user', id=current_user.id) }}" 
+                            class="btn btn-secondary btn-sm">
+                            Update Profile
+                        </a>
+
+                        <!-- Delete Account Btn -->
+                        <a href="{{ url_for('delete_user', id=current_user.id) }}" 
+                            class="btn btn-danger btn-sm">
+                            Delete
+                        </a>
+                    </div>
+
+                    {% if current_user.avatar %}
+                        <!-- Avatar -->
+                        <div class="col-4">
+                            <img src="{{ url_for('static', filename='images/' + current_user.avatar) }}" 
+                                width="180" 
+                                align="right" 
+                            />
+                        </div>
+                    {% else %}
+                        <!-- Default Avatar -->
+                        <div class="col-4">
+                            <img src="{{ url_for('static', filename='images/avatar.png') }}" 
+                                width="180"
+                                align="right" 
+                            />
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+
+        </div>
+        <!-- <div class="card-footer text-body-secondary">
+            2 days ago
+        </div> -->
+    </div>
+
+
+    <div class="card mt-4">
+        <div class="card-header">
+            Update Profile
+        </div>
+        <div class="card-body">
+            <form action="/dashboard" method="POST" 
+                enctype="multipart/form-data">
+                {{ form.hidden_tag() }}
+            
+                {{ form.name.label(class="form-label") }}
+                {{ form.name(class="form-control shadow-none", value=user.name) }}
+                <br />
+            
+                {{ form.username.label(class="form-label") }}
+                {{ form.username(class="form-control shadow-none", value=user.username) }}
+                <br />
+            
+                {{ form.email.label(class="form-label") }}
+                {{ form.email(class="form-control shadow-none", value=user.email) }}
+                <br />
+            
+                {{ form.favorite_color.label(class="form-label") }}
+                {{ form.favorite_color(class="form-control shadow-none", value=user.favorite_color) }}
+                <br />
+            
+                {{ form.avatar.label(class="form-label") }}
+                {{ form.avatar(class="form-control shadow-none", value=user.avatar) }}
+                <br />
+            
+                {{ form.about.label(class="form-label") }}
+                <!-- {{ form.about(class="form-control shadow-none", value=user.about) }} -->
+                <textarea name="about" class="form-control shadow-none" rows="3">{{ user.about }}</textarea>
+                <br /> 
+            
+                <!-- Submit Btn -->
+                {{ form.submit(class="btn btn-secondary shadow-none btn-sm") }}
+            </form>
+        </div>
+    </div>
+{% endblock %}

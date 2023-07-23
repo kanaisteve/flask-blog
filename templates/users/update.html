@@ -1,0 +1,39 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+    {% if id == current_user.id %}
+        <h3 class="my-4">Update User</h3>
+        <div class="shadow p-3 mb-5 bg-body rounded">
+            <form action="/user/update/{{user.id}}" method="POST">
+                {{ form.hidden_tag() }}
+        
+                {{ form.name.label(class="form-label") }}
+                {{ form.name(class="form-control shadow-none", value=user.name) }}
+                <br />
+        
+                {{ form.username.label(class="form-label") }}
+                {{ form.username(class="form-control shadow-none", value=user.username) }}
+                <br />
+        
+                {{ form.email.label(class="form-label") }}
+                {{ form.email(class="form-control shadow-none", value=user.email) }}
+                <br />
+        
+                {{ form.favorite_color.label(class="form-label") }}
+                {{ form.favorite_color(class="form-control shadow-none", value=user.favorite_color) }}
+                <br />
+        
+                <!-- Submit Btn -->
+                {{ form.submit(class="btn btn-sm btn-secondary shadow-none") }}
+        
+                <!-- Delete Account Btn -->
+                <a href="{{ url_for('delete_user', id=id) }}" class="btn btn-sm btn-danger">
+                    Delete
+                </a>
+            </form>
+        </div>
+    {% else %}
+        <h3 class="my-4">Access Denied</h3>
+        <p>Sorry, you do not have access to this user profile...</p>
+    {% endif %}
+{% endblock %}

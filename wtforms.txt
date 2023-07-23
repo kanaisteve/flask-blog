@@ -1,0 +1,34 @@
+Fields:
+1. BooleanField
+2. DateField
+3. DecimalField
+4. FileField
+5. HiddenField
+6. MultipleField
+7. FieldList
+8. FloadField
+9. FormField
+10.IntegerField
+11.PasswordField
+12.RadioField
+13.SelectField
+14.SelectMultipleField
+15.SubmitField
+16.StringField
+17.TextAreaField
+
+Validators
+1. DataRequired
+2. Email
+3. EqualTo
+4. InputRequired
+5. IPAddress
+6. Length
+7. MacAddress
+8. NumberRange
+9. Optional
+10.Regexp
+11.URL
+12.UUID
+13.AnyOf
+14.NoneOf
