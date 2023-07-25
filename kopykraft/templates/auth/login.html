@@ -1,0 +1,25 @@
+{% extends 'layout.html' %}
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+    <!-- Form Fields -->
+    <h2 class="mt-5 mb-3" align="center">Login</h2>
+    <div align="center">
+        <div class="shadow p-3 mb-5 bg-body rounded col-6">
+            <form action="" method="POST">
+                {{ form.hidden_tag() }}
+        
+                {{ form.username.label(class="form-label float-start") }}
+                {{ form.username(class="form-control shadow-none") }}
+                <br />
+        
+                {{ form.password.label(class="form-label float-start") }}
+                {{ form.password(class="form-control shadow-none") }}
+                <br />
+        
+                {{ form.submit(class="btn btn-secondary shadow-none") }}
+            </form>
+        </div>
+    </div>
+{% endblock %}

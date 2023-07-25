@@ -1,49 +1,53 @@
 # Create A Flask Blog
 
-This project provides a comprehensive guide on creating a flask blog application called Flasker. Users will be able to register, log in, create posts, and edit or delete their own posts.  You will learn a bit more advanced stuff like working with Web Forms (WTF), Flask Migration, Connecting to MySQL Database, integrating CKEditor and so much more.
+This project provides a comprehensive guide on creating a flask blog application called KopyKraft. Users will be able to register, log in, create posts, and edit or delete their own posts.  You will learn a bit more advanced stuff like working with Web Forms (WTF), Flask Migration, Connecting to MySQL Database, integrating CKEditor and so much more.
 
 <p>
-  <img src="static/images/screenshots/home.png" alt="" />
+  <img src="kopykraft/static/images/screenshots/home.png" alt="" />
 </p>
 
 <p>
-  <img src="static/images/screenshots/about.png" alt="" />
+  <img src="kopykraft/static/images/screenshots/about.png" alt="" />
 </p>
 
 <p>
-  <img src="static/images/screenshots/services.png" alt="" />
+  <img src="kopykraft/static/images/screenshots/services.png" alt="" />
 </p>
 
 <p>
-  <img src="static/images/screenshots/blog_posts.png" alt="" />
+  <img src="kopykraft/static/images/screenshots/blog_posts.png" alt="" />
 </p>
 
 <p>
-  <img src="static/images/screenshots/post_details.png" alt="" />
+  <img src="kopykraft/static/images/screenshots/post_details.png" alt="" />
 </p>
 
 <p>
-  <img src="static/images/screenshots/login.png" alt="" />
+  <img src="kopykraft/static/images/screenshots/login.png" alt="" />
 </p>
 
 <p>
-  <img src="static/images/screenshots/add_user.png" alt="" />
+  <img src="kopykraft/static/images/screenshots/register.png" alt="" />
 </p>
 
 <p>
-  <img src="static/images/screenshots/users_list.png" alt="" />
+  <img src="kopykraft/static/images/screenshots/add_user.png" alt="" />
 </p>
 
 <p>
-  <img src="static/images/screenshots/dashboard.png" alt="" />
+  <img src="kopykraft/static/images/screenshots/users_list.png" alt="" />
 </p>
 
 <p>
-  <img src="static/images/screenshots/update_profile.png" alt="" />
+  <img src="kopykraft/static/images/screenshots/dashboard.png" alt="" />
 </p>
 
 <p>
-  <img src="static/images/screenshots/add_post.png" alt="" />
+  <img src="kopykraft/static/images/screenshots/update_profile.png" alt="" />
+</p>
+
+<p>
+  <img src="kopykraft/static/images/screenshots/add_post.png" alt="" />
 </p>
 
 

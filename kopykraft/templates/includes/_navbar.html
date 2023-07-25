@@ -8,32 +8,33 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="/about">About</a>
+                    <a class="nav-link active" aria-current="page" href="{{ url_for('home.about') }}">About</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/services">Services</a>
+                    <a class="nav-link" href="{{ url_for('home.services') }}">Services</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ url_for('posts') }}">Blog</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ url_for('name') }}">Name</a>
+                    <a class="nav-link" href="{{ url_for('posts.index') }}">Blog</a>
                 </li>
                 {% if current_user.is_authenticated %}
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url_for('dashboard') }}">Dashboard</a>
+                        <a class="nav-link" href="{{ url_for('user.dashboard') }}">Dashboard</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('posts.create') }}">Add Post</a>
                     </li>
 
                     <!-- check if user is admin [assuming admin_id = 13] -->
                     {% if current_user.id == 13 %}
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ url_for('admin') }}">Admin</a>
-                    </li>
-                    {% endif %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url_for('admin.add_user') }}">Add User</a>
+                        </li>   
 
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ url_for('add_post') }}">Add Post</a>
-                    </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url_for('admin.dashboard') }}">Admin</a>
+                        </li>
+                    {% endif %}
                 {% endif %}
             </ul>
             
@@ -58,22 +59,23 @@
                             {{ current_user.username }}
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="{{ url_for('update_user', id=current_user.id) }}">Profile</a></li>
+                            <li><a class="dropdown-item" href="{{ url_for('profile.update', id=current_user.id) }}">Profile</a></li>
+                            <li><a class="dropdown-item" href="{{ url_for('profile.name') }}">Name</a></li>
                             <li><a class="dropdown-item" href="#">Settings</a></li>
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
-                            <li><a class="dropdown-item" href="{{ url_for('logout') }}">Logout</a></li>
+                            <li><a class="dropdown-item" href="{{ url_for('auth.logout') }}">Logout</a></li>
                         </ul>
                     </li>
                 {% else %}
                     <!-- Login -->
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url_for('login') }}">Login</a>
+                        <a class="nav-link" href="{{ url_for('auth.login') }}">Login</a>
                     </li>
                     <!-- Register -->
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url_for('add_user') }}">Register</a>
+                        <a class="nav-link" href="{{ url_for('auth.register') }}">Register</a>
                     </li>
                 {% endif %}
             </ul>

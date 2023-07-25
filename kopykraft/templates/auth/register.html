@@ -1,0 +1,41 @@
+{% extends 'layout.html' %}
+
+{% block title %}Add User{% endblock %}
+
+{% block content %}
+    <!-- Form Fields -->
+    <h2 class="mt-5 mb-3" align="center">Sign Up</h2>
+    <div align="center">
+        <div class="shadow p-3 mb-5 bg-body rounded col-6">
+            <form action="" method="POST">
+                {{ form.hidden_tag() }}
+
+                {{ form.name.label(class="form-label float-start") }}
+                {{ form.name(class="form-control shadow-none") }}
+                <br />
+
+                {{ form.username.label(class="form-label float-start") }}
+                {{ form.username(class="form-control shadow-none") }}
+                <br />
+
+                {{ form.email.label(class="form-label float-start") }}
+                {{ form.email(class="form-control shadow-none") }}
+                <br />
+
+                {{ form.favorite_color.label(class="form-label float-start") }}
+                {{ form.favorite_color(class="form-control shadow-none") }}
+                <br />
+
+                {{ form.password_hash.label(class="form-label float-start") }}
+                {{ form.password_hash(class="form-control shadow-none") }}
+                <br />
+
+                {{ form.password_hash2.label(class="form-label float-start") }}
+                {{ form.password_hash2(class="form-control shadow-none") }}
+                <br />
+
+                {{ form.submit(class="btn btn-secondary shadow-none") }}
+            </form>
+        </div>
+    </div>
+{% endblock %}

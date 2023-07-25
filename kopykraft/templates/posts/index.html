@@ -1,0 +1,40 @@
+{% extends 'layout.html' %}
+
+{% block title %}Blog Posts{% endblock %}
+
+{% block content %}
+<!-- Form Fields -->
+<!-- <h2 class="mt-4">Blog Posts</h2> -->
+
+{% for post in posts %}
+<div class="shadow p-3 mb-4 bg-body rounded">
+    <!-- clickable title -->
+    <a href="{{ url_for('posts.show', id=post.id) }}" class="text-decoration-none text-secondary">
+        <h4>{{ post.title }}</h4>
+    </a>
+
+    By: {{ post.author.name }}<br />
+    {{ post.date_posted }}<br />
+    {{ post.content|safe }}<br /><br />
+
+    <!-- show details btn -->
+    <a href="{{ url_for('posts.show', id=post.id) }}" class="btn btn-outline-secondary btn-sm">
+        View Post
+    </a>
+
+    <!-- check if user is owner or admin(id:13) of the post -->
+    {% if current_user.id == post.author.id or current_user.id == 13 %}
+    <!-- edit post btn -->
+    <a href="{{ url_for('posts.edit', id=post.id) }}" class="btn btn-outline-secondary btn-sm">
+        Edit Post
+    </a>
+
+    <!-- delete post btn -->
+    <a href="{{ url_for('posts.delete', id=post.id) }}" class="btn btn-outline-danger btn-sm">
+        Delete Post
+    </a>
+    {% endif %}
+</div>
+{% endfor %}
+
+{% endblock %}

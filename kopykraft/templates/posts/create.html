@@ -1,0 +1,32 @@
+{% extends 'layout.html' %}
+
+{% block title %}Add Post{% endblock %}
+
+{% block content %}
+
+<!-- Form Fields -->
+<h1 class="mt-4">Add Blog Post</h1>
+<div class="shadow p-3 mb-5 bg-body rounded">
+    <form action="" method="POST">
+        {{ form.hidden_tag() }}
+
+        {{ form.title.label(class="form-label") }}
+        {{ form.title(class="form-control shadow-none") }}
+        <br />
+
+        {{ form.slug.label(class="form-label") }}
+        {{ form.slug(class="form-control shadow-none") }}
+        <br />
+
+        {{ form.content.label(class="form-label") }}
+        {{ form.content(class="form-control shadow-none", rows="5") }}
+        <br />
+
+        {{ form.submit(class="btn btn-secondary shadow-none") }}
+    </form>
+
+    {{ ckeditor.load() }}
+    {{ ckeditor.config(name='content') }}
+
+</div>
+{% endblock %}
